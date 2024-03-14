@@ -19,7 +19,7 @@ const RadioButton = (props: RadioButtonTypes) => {
 
     return (
         <View >
-            {options.map((option: String) => (
+            {options.map((option: string) => (
                 <RadioElement
                     key={option}
                     value={option}

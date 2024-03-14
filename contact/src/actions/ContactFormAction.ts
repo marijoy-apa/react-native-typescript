@@ -12,26 +12,19 @@ type ContactFormUpdateProp = {
 
 
 export const contactFormUpdate = (props: ContactFormUpdateProp) => {
-    console.log('call dispatch update1')
 
     const { prop, value } = props
-    // return {
-    //     type: CONTACT_FORM_UPDATE,
-    //     payload: { prop, value }
-    // }
     return (dispatch: AppDispatch, getState: () => RootState) => {
         console.log('call dispatch update')
         dispatch({
             type: CONTACT_FORM_UPDATE,
             payload: { prop, value }
         })
-        // dispatch(validateForm())
         validateForm(dispatch, getState)
     }
 }
 
 //creating a new contact
-
 type CreateContactProp = {
     firstName: string;
     lastName: string;
@@ -137,7 +130,6 @@ export const clearContactForm = () => {
 
 
 export const validateForm = (dispatch: Dispatch, getState: () => RootState) => {
-    // return (dispatch: Dispatch, getState: () => RootState) => {
     //get data from application state
     const { firstName, lastName, phone } = getState().contactForm;
 
@@ -147,14 +139,11 @@ export const validateForm = (dispatch: Dispatch, getState: () => RootState) => {
         && /^\d+$/.test(item.digit.trim())))
 
     const isValid = isValidName && isValidPhone
-    // console.log('validate form ', isValid)
 
     dispatch({ type: CONTACT_FORM_VALIDATE, payload: isValid })
-    // }
 }
 
 //fill out contact from with existing data for Edit Contact Screen
-
 export const contactFormFillout = (item: any) => {
     return (dispatch: Dispatch) => {
         dispatch({

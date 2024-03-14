@@ -3,6 +3,10 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import Spacer from './Spacer';
 
+type propType = {
+    
+}
+
 // RadioElement component representing a single radio option
 const RadioElement = ({ value, onSelect, selectedOption }) => {
 
