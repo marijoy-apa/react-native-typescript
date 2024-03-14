@@ -5,7 +5,6 @@ import {
     ContactListState,
 } from '../actions/types'
 
-
 const INITIAL_STATE: ContactListState = {
     list: [],
     isFetching: true,

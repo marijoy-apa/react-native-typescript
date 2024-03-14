@@ -8,8 +8,6 @@ import {
     ContactFormState
 } from "../actions/types";
 
-
-
 const INITIAL_STATE = {
     firstName: '',
     lastName: '',

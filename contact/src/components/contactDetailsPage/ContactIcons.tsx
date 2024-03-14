@@ -40,7 +40,6 @@ const ContactIcons = (props: propsType) => {
 
         } catch (error) {
             // If not supported, update state for error to display error message
-            // console.log('Error opening phone URL:', error);
             onError('Unable to make phone call')
 
         }
