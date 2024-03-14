@@ -25,6 +25,12 @@ type propType = {
 }
 const CreateContactScreen = (props: propType) => {
     const {
+        firstName,
+        lastName,
+        phone,
+        notes,
+        emergencyContact,
+        image,
         error,
         isValid,
         createContact,
@@ -34,14 +40,14 @@ const CreateContactScreen = (props: propType) => {
     const { colors } = useTheme();
 
     const onSaveForm = async () => {
-        const {
+        console.log({
             firstName,
             lastName,
             phone,
             notes,
             emergencyContact,
             image,
-        } = props
+        })
         const result = await createContact({
             firstName,
             lastName,
@@ -135,8 +141,21 @@ const styles = StyleSheet.create({
 })
 
 const mapStateToProps = (state: RootState, ownProps: any) => {
-
+    const {
+        firstName,
+        lastName,
+        phone,
+        notes,
+        emergencyContact,
+        image,
+    } = state.contactForm
     return {
+        firstName,
+        lastName,
+        phone,
+        notes,
+        emergencyContact,
+        image,
         error: state.contactForm.error,
         isValid: state.contactForm.isValid,
         onCancel: ownProps.onCancel,

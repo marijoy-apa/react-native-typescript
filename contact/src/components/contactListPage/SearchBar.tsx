@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     textInput: {
         marginLeft: 20,
         flex: 1,
-        // color: 'red'
         fontWeight: 'bold'
     },
     xbutton: {

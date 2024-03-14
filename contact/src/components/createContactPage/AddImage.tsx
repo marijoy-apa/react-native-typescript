@@ -41,7 +41,6 @@ const AddImage = (props: propsType) => {
 
     return (
         <View>
-            {/* <Image style={[styles.imageStyle, { backgroundColor: colors.primaryContainer }]} source={{ uri: imageUrl }} /> */}
             {renderImage()}
             <TouchableOpacity onPress={handleCameraLaunch}>
                 <Text style={styles.addPhotoButton}>{imageUrl ? 'Change Photo' : 'Add Photo'}</Text>

@@ -39,6 +39,7 @@ export const createContact = (props: CreateContactProp) => {
     const { firstName, lastName, phone, notes, emergencyContact, image } = props
     return (dispatch: Dispatch) => {
         return new Promise((resolve) => {
+            console.log('phone', phone)
             // filter out valid numbers
             const validPhoneNum = filterValidPhoneNumber(phone)
             const reference = ref(getDatabase(), 'contact-list');
@@ -171,6 +172,7 @@ export const updateError = (payload: string) => {
 
 //helper function to filter out valid phone numbers from the list
 const filterValidPhoneNumber = (phoneList: { type: string, digit: string }[]) => {
+    console.log(phoneList)
     const validList = phoneList.filter(item => {
         const isValidPhone = item.digit.trim() !== "" && /^\d+$/.test(item.digit.trim())
         return isValidPhone;

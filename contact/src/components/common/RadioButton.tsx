@@ -4,7 +4,7 @@ import RadioElement from './RadioElement';
 
 type RadioButtonTypes = {
     onSelectPhoneType: (value: string) => void,
-    preselectedOption: String,
+    preselectedOption: string,
     options: string[]
 }
 // RadioButton component that displays a list of radio options

@@ -25,9 +25,6 @@ const ContactItem = (props: ContactProps) => {
     // Retrieve contact details from the Redux state
     const contact = contactList.find(contact => contact.id === item.id)
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-    // useEffect(() => {
-    //     console.log('contact', contact)
-    // }, [])
 
     if (!contact) {
         return null;
@@ -117,7 +114,6 @@ const styles = StyleSheet.create({
 
     },
     iconContainer: {
-        // backgroundColor: 'blue', 
         padding: 10,
         paddingLeft: 5,
     }
