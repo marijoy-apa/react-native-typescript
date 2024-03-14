@@ -8,7 +8,7 @@ import ContactForm from "../components/createContactPage/ContactForm";
 import SnackbarError from "../components/common/SnackbarError";
 import { Contact } from "../actions/types";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { ContactDetailsScreenProps, EditContactScreenProps, RootStackParamList } from "../navigation/types";
+import { EditContactScreenProps, RootStackParamList } from "../navigation/types";
 import { RootState } from "../store/store";
 
 type propType = {
@@ -21,18 +21,18 @@ type propType = {
     image: string | null;
     isValid: Boolean;
     isPopulated: Boolean,
-    onCancel: any,
     updateContact: any,
     contactFormFillout: any,
+    clearContactForm: any,
 }
 
 const EditContactScreen = (props: propType) => {
     const { contactList,
         isValid,
         isPopulated,
-        onCancel,
         updateContact,
-        contactFormFillout
+        contactFormFillout, 
+        clearContactForm,
     } = props
     const id = useRoute<EditContactScreenProps['route']>().params.id
     const item = contactList.find(contact => contact.id === id)
@@ -95,7 +95,7 @@ const EditContactScreen = (props: propType) => {
     )
 }
 
-const mapStateToProps = (state: RootState, ownProps: any) => {
+const mapStateToProps = (state: RootState) => {
     const { firstName, lastName, phone, notes, emergencyContact, image, isValid, isPopulated } = state.contactForm;
     return {
         contactList: state.contactList.list,
@@ -107,7 +107,6 @@ const mapStateToProps = (state: RootState, ownProps: any) => {
         image,
         isValid,
         isPopulated,
-        onCancel: ownProps.onCancel,
     }
 }
 

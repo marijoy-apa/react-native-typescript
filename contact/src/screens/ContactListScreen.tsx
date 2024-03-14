@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, StyleSheet, FlatList, ActivityIndicator, Text } from 'react-native'
+import { View, StyleSheet, FlatList, ActivityIndicator } from 'react-native'
 import { FAB} from 'react-native-elements';
 import { BottomSheet } from "@rneui/themed";
 import { connect } from "react-redux";
